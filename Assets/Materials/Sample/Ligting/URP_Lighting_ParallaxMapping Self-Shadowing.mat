@@ -42,7 +42,7 @@ Material:
     - _MinLayerCount: 5
     - _MinSelfShadowLayerCount: 5
     - _ParallaxScale: 0.05
-    - _ShadowIntensity: 1
+    - _ShadowIntensity: 13.2
     - _SoftShadow: 1
     - _Threshold: 1
     m_Colors:
