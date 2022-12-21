@@ -14,7 +14,7 @@ Nova分形
 https://en.wikipedia.org/wiki/Fractal
 */
 
-Shader "Lakehani/URP/Effect/Fractal (Mandelbrot)"
+Shader "ShaderLearning/URP/Effect/Fractal (Mandelbrot)"
 {
     Properties
     {

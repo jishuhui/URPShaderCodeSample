@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Base/TangentCheck"
+Shader "ShaderLearning/URP/Base/TangentCheck"
 {
     Properties
     {

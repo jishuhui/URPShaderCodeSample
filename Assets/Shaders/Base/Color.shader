@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Base/Color"
+Shader "ShaderLearning/URP/Base/Color"
 {
     Properties
     {

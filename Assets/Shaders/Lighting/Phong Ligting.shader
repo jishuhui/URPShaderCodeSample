@@ -2,7 +2,7 @@
 //该例子为冯氏着色
 //Phong着色与Phong高光不同，着色模型是一个完整的效果混合，高光只是其中一项
 
-Shader "Lakehani/URP/Lighting/Phong"
+Shader "ShaderLearning/URP/Lighting/Phong"
 {
     Properties
     {

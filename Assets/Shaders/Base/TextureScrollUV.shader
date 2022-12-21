@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Base/TextureScrollUV"
+Shader "ShaderLearning/URP/Base/TextureScrollUV"
 {
     Properties
     {
@@ -48,7 +48,7 @@ Shader "Lakehani/URP/Base/TextureScrollUV"
                 OUT.uv = TRANSFORM_TEX(IN.uv, _BaseMap);
                 //_Time声明在UnityInput.hlsl有详细注释可以自行查看
                 float2 scrollUV = float2(_ScrollXSpeed, _ScrollYSpeed) * _Time.y + OUT.uv;
-                OUT.uv = scrollUV;
+                OUT.uv = frac(scrollUV);
                 return OUT;
             }
 

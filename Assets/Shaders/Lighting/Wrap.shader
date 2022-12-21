@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Lighting/Wrap"
+Shader "ShaderLearning/URP/Lighting/Wrap"
 {
     Properties
     {

@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Base/Transparent"
+Shader "ShaderLearning/URP/Base/Transparent"
 {
     Properties
     {

@@ -4,7 +4,7 @@
 //当然如果模型是平滑着色（顶点法线是周围面法线的平均值方向）的话可以在片段着色器使用这个求面法线normalize( cross(ddy(positionWS),ddx(positionWS)))。
 //以上记录作为扩展知识，与本例无关。
 //该例子为 Gouraud着色
-Shader "Lakehani/URP/Lighting/Gouraud"
+Shader "ShaderLearning/URP/Lighting/Gouraud"
 {
     Properties
     {

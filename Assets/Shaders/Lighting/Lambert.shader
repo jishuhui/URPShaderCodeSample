@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Lighting/Lambert"
+Shader "ShaderLearning/URP/Lighting/Lambert"
 {
     Properties
     {

@@ -27,7 +27,7 @@ cook-torrance方程 = DFG/4(wo ⋅ n)(wi ⋅ n)
 // H: Half vector 半角向量 (V + L)得单位向量
 */
 
-Shader "Lakehani/URP/Lighting/PBRCommon"
+Shader "ShaderLearning/URP/Lighting/PBRCommon"
 {
     Properties
     {

@@ -1,9 +1,9 @@
-Shader "Lakehani/URP/Lighting/BumpMap"
+Shader "ShaderLearning/URP/Lighting/BumpMap"
 {
     Properties
     {
         _BumpMap("Normal Map", 2D) = "bump" {}
-        _BumpScale("Normal Scale",float) = 1.0
+        _BumpScale("Normal Scale",Range(0, 1)) = 1.0
     }
 
     SubShader
@@ -73,6 +73,7 @@ Shader "Lakehani/URP/Lighting/BumpMap"
                 //把取出来的法线贴图转换到世界空间
                 half3 normalWS = TransformTangentToWorld(normalTS,half3x3(IN.tangentWS.xyz, IN.bitangentWS.xyz, IN.normalWS.xyz));
                 normalWS = normalize(normalWS);
+                
                 half3 viewWS = SafeNormalize(IN.viewWS);
                 //注意这里为 lambert（漫反射）+ BlinnPhong（高光）因为不加光照看不出来法线贴图的作用,
                 //对于法线贴图的关键点是如何正确取出贴图中的法线数据，以下代码用于演示效果。

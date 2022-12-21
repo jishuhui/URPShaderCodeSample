@@ -28,7 +28,7 @@ Interior Mapping 包含Cubemap和预投影纹理2个做法的shader代码(原理
 https://forum.unity.com/threads/interior-mapping.424676/#post-2751518
 */
 
-Shader "Lakehani/URP/Effect/InteriorMapping (Pre-Projected)"
+Shader "ShaderLearning/URP/Effect/InteriorMapping (Pre-Projected)"
 {
     Properties
     {

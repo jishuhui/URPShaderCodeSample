@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Lighting/Banded"
+Shader "ShaderLearning/URP/Lighting/Banded"
 {
     Properties
     {

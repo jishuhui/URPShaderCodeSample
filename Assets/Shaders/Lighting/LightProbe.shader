@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Lighting/LightProbe"
+Shader "ShaderLearning/URP/Lighting/LightProbe"
 {
     Properties
     {

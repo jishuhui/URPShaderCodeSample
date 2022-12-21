@@ -1,6 +1,6 @@
 //使用Blinn-Phong 作为光照模型来演示多光源的如何操作
 
-Shader "Lakehani/URP/Lighting/MultiLighting"
+Shader "ShaderLearning/URP/Lighting/MultiLighting"
 {
     Properties
     {

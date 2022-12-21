@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Base/UVCheck"
+Shader "ShaderLearning/URP/Base/UVCheck"
 {
     Properties
     {

@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Base/NormalCheck"
+Shader "ShaderLearning/URP/Base/NormalCheck"
 {
     Properties
     {

@@ -16,7 +16,7 @@
 使用屏幕后处理
 */
 
-Shader "Lakehani/URP/Lighting/Refraction"
+Shader "ShaderLearning/URP/Lighting/Refraction"
 {
     Properties
     {

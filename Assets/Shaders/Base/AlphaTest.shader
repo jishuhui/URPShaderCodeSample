@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Base/AlphaTest"
+Shader "ShaderLearning/URP/Base/AlphaTest"
 {
     Properties
     {

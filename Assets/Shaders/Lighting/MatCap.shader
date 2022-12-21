@@ -5,7 +5,7 @@
 //缺点：因为只是采样一张贴图，所以当灯光改变时效果不会变化，看起来好像一直朝向摄像机，也就是常说的难以使效果与环境产生交互
 //可以考虑将复杂的光照信息（例如高光，漫反射）烘焙在MatCap贴图上，然后将环境信息（例如建筑，天空）烘培在CubeMap上，然后将2者结合在一起，多少能弥补一下缺点
 //MatCap基于它的效果，很多使用用来低成本的实现车漆，卡通渲染头发的“天使环（angel ring）”等相关效果
-Shader "Lakehani/URP/Lighting/MatCap"
+Shader "ShaderLearning/URP/Lighting/MatCap"
 {
     Properties
     {

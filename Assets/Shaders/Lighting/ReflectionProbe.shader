@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Lighting/ReflectionProbe"
+Shader "ShaderLearning/URP/Lighting/ReflectionProbe"
 {
     Properties
     {

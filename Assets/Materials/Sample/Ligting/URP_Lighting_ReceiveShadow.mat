@@ -20,6 +20,8 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
+    - _ShadowSoftSize: 0.001
     - _SoftShadow: 0
-    m_Colors: []
+    m_Colors:
+    - _ShadowColor: {r: 0.065302946, g: 0.036445357, b: 0.1981132, a: 1}
   m_BuildTextureStacks: []

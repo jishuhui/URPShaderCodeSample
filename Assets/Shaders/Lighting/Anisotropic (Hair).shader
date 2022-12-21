@@ -13,12 +13,12 @@
 为方便观察各项异性高光，所以并没有完整的去实现Kajiya-Kay模型，完整的可以参考 http://web.engr.oregonstate.edu/~mjb/cs519/Projects/Papers/HairRendering.pdf
 */
 
-Shader "Lakehani/URP/Lighting/Anisotropic"
+Shader "ShaderLearning/URP/Lighting/Anisotropic"
 {
     Properties
     {
         _SpecularColor ("SpecularColor", Color) = (1,1,1,1)
-        _SpecularExp ("SpecularExp",  float) = 2
+        _SpecularExp ("Smoothness", Range(0,1)) = 0.5
         _StretchedNoise("StretchedNoise", 2D) = "white" {}
         _Shift("Shift",float) = 0
     }
@@ -75,6 +75,28 @@ Shader "Lakehani/URP/Lighting/Anisotropic"
                 half dirAttenuation = smoothstep(-1.0,0.0,dotTH);
                 return dirAttenuation * pow(sinTH,exponent);
             }
+            
+            // G项 几何函数
+            half GeometrySchlickGGX(half NdotV, half roughness)
+            {
+                float r = (roughness + 1.0);
+                float k = (r*r) / 8.0;
+
+                float nom   = NdotV;
+                float denom = NdotV * (1.0 - k) + k;
+
+                return nom / denom;
+            }
+            // G项 几何函数 Smith’s Schlick-GGX
+            half G_GeometrySmith(half3 N, half3 V, half3 L, half roughness)
+            {
+                half NdotV = max(dot(N, V), 0.0);
+                half NdotL = max(dot(N, L), 0.0);
+                half ggx1 = GeometrySchlickGGX(NdotV, roughness);
+                half ggx2 = GeometrySchlickGGX(NdotL, roughness);
+
+                return ggx1 * ggx2;
+            }
 
             half3 LightingHair(half3 bitangentWS, half3 lightDirWS, half3 normalWS, half3 viewDirWS, float2 uv,half exp,half3 specular)
             {
@@ -84,6 +106,10 @@ Shader "Lakehani/URP/Lighting/Anisotropic"
 
                 //specular
                 half3 specularColor  = StrandSpecular(t1,viewDirWS,lightDirWS,exp) * specular;
+
+                half G = G_GeometrySmith(normalWS,viewDirWS,lightDirWS,_SpecularExp);
+
+                specularColor *= G;
 
                 return specularColor;
 
@@ -108,8 +134,9 @@ Shader "Lakehani/URP/Lighting/Anisotropic"
                 half3 normalWS = normalize(IN.normalWS);
                 half3 viewWS = SafeNormalize(IN.viewWS);
                 half3 bitangentWS = normalize(IN.bitangentWS);
+                half smoothness = exp2(10 * _SpecularExp + 1);
 
-                half3 hairColor = LightingHair(bitangentWS,light.direction,normalWS,viewWS,IN.texcoord,_SpecularExp,_SpecularColor.rgb);
+                half3 hairColor = LightingHair(bitangentWS,light.direction,normalWS,viewWS,IN.texcoord,smoothness,_SpecularColor.rgb);
 
                 half4 totalColor=half4(hairColor.rgb,1);
 

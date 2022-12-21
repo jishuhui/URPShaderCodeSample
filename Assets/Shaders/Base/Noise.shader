@@ -1,7 +1,7 @@
 // Random/hash function by Inigo Quilez
 // 参考这里 https://www.shadertoy.com/view/4sfGzS
 
-Shader "Lakehani/URP/Base/Noise"
+Shader "ShaderLearning/URP/Base/Noise"
 {
     Properties
     {

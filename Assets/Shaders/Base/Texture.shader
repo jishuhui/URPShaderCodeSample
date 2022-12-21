@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Base/Texture"
+Shader "ShaderLearning/URP/Base/Texture"
 {
     Properties
     {

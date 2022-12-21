@@ -2,7 +2,7 @@
 这里使用浮雕来演示，视差遮蔽方法类似，更多关于高度图或者视差映射的东西看Parallax Mapping (HeightMap).shader文件
 */
 
-Shader "Lakehani/URP/Lighting/ParallaxMapping (Self-Shadowing)"
+Shader "ShaderLearning/URP/Lighting/ParallaxMapping (Self-Shadowing)"
 {
     Properties
     {

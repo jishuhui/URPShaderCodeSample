@@ -1,7 +1,7 @@
 //Oren–Nayar反射率模型是 粗糙表面漫反射 的反射率模型。该模型是一种简单的方法，
 //这个模型是一个简单的方法来近似光线对粗糙但，仍然是lambertian式。
 
-Shader "Lakehani/URP/Lighting/OrenNayer"
+Shader "ShaderLearning/URP/Lighting/OrenNayer"
 {
     Properties
     {

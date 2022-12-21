@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Base/VertexAnimation"
+Shader "ShaderLearning/URP/Base/VertexAnimation"
 {
     Properties
     {

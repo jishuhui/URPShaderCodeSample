@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Base/BitangentCheck"
+Shader "ShaderLearning/URP/Base/BitangentCheck"
 {
     Properties
     {

@@ -2,7 +2,7 @@
 如果你想获得和Phong(冯氏)着色类似的效果，就必须在使用Blinn-Phong模型时将镜面反光度设置更高一点。通常我们会选择冯氏着色时反光度分量的2到4倍。
 我这里因为用了Smoothness参数所以按照常规的 2到4倍并不准确，可以自己去掉Smoothness的计算，尝试一下。
 */
-Shader "Lakehani/URP/Lighting/BlinnPhong"
+Shader "ShaderLearning/URP/Lighting/BlinnPhong"
 {
     Properties
     {

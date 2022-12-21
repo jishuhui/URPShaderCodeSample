@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Base/Fog"
+Shader "ShaderLearning/URP/Base/Fog"
 {
     Properties
     {

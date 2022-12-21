@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Lighting/Lightmap"
+Shader "ShaderLearning/URP/Lighting/Lightmap"
 {
     Properties
     {

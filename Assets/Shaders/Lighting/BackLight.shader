@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Lighting/BackLight"
+Shader "ShaderLearning/URP/Lighting/BackLight"
 {
     Properties
     {

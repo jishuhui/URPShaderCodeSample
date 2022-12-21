@@ -3,7 +3,7 @@
 我这里因为用了Smoothness参数所以按照常规的 2到4倍并不准确，可以自己去掉Smoothness的计算，尝试一下。
 */
 
-Shader "Lakehani/URP/Lighting/BlinnPhongSpecular"
+Shader "ShaderLearning/URP/Lighting/BlinnPhongSpecular"
 {
     Properties
     {

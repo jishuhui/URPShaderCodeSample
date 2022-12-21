@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Base/Fresnel"
+Shader "ShaderLearning/URP/Base/Fresnel"
 {
     Properties
     {

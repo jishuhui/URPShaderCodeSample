@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Lighting/Shadow"
+Shader "ShaderLearning/URP/Lighting/Shadow"
 {
     Properties
     {

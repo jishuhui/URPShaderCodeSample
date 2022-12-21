@@ -23,7 +23,7 @@ http://ma-yidong.com/2019/06/22/a-short-history-of-parallax-occlusion-mapping-re
 */
 
 
-Shader "Lakehani/URP/Lighting/ParallaxMapping"
+Shader "ShaderLearning/URP/Lighting/ParallaxMapping"
 {
     Properties
     {

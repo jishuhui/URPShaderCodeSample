@@ -39,7 +39,7 @@ https://forum.unity.com/threads/interior-mapping.424676/#post-2751518
 */
 
 
-Shader "Lakehani/URP/Effect/InteriorMapping (Cubemap)"
+Shader "ShaderLearning/URP/Effect/InteriorMapping (Cubemap)"
 {
     Properties
     {

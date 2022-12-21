@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Lighting/PhongSpecular"
+Shader "ShaderLearning/URP/Lighting/PhongSpecular"
 {
     Properties
     {

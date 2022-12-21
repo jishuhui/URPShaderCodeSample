@@ -4,11 +4,11 @@ Minnaert适合模拟多孔或纤维状表面，如月球或天鹅绒。这些表
 此模拟提供的结果与Oren Nayar非常接近，后者也经常被称为velvet（天鹅绒）或moon着色器。
 */
 
-Shader "Lakehani/URP/Lighting/Minnaert"
+Shader "ShaderLearning/URP/Lighting/Minnaert"
 {
     Properties
     {
-        _Roughness("Roughness",float) = 1
+        _Roughness("Roughness",Range(0,8)) = 1
     }
     SubShader
     {
@@ -65,7 +65,8 @@ Shader "Lakehani/URP/Lighting/Minnaert"
                 half3 lightColor = light.color * light.distanceAttenuation;
                 half3 normalWS = normalize(IN.normalWS);
                 half3 viewWS = SafeNormalize(IN.viewWS);
-
+                
+                _Roughness = max(0.001,_Roughness);
                 half minnaert = LightingMinnaert(light.direction, normalWS, viewWS, _Roughness);
                 
                 half3 minnaertColor = minnaert * lightColor;

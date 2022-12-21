@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Base/TextureScreenSpace"
+Shader "ShaderLearning/URP/Base/TextureScreenSpace"
 {
     Properties
     {

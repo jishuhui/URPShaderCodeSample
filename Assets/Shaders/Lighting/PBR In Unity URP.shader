@@ -25,7 +25,7 @@ V * F = (1.0 / ( LoH^2 * (roughness + 0.5) ))*specColor
 以下代码是金属工作流中的PBR公式实现
 */
 
-Shader "Lakehani/URP/Lighting/UnityPBRInURP"
+Shader "ShaderLearning/URP/Lighting/UnityPBRInURP"
 {
     Properties
     {

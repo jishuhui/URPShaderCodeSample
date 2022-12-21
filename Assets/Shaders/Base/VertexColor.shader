@@ -1,4 +1,4 @@
-Shader "Lakehani/URP/Base/VertexColor"
+Shader "ShaderLearning/URP/Base/VertexColor"
 {
     Properties
     {
