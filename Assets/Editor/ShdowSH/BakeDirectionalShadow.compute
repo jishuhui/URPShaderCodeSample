@@ -1,0 +1,23 @@
+#pragma kernel CSMain
+
+StructuredBuffer<float3> _VextriceBuffer;
+RWStructuredBuffer<float> _ShadowBuffer;
+float4x4 _Model2Light;
+int _BufferSize;
+
+Texture2D _ShadowMap;
+SamplerState _PointClamp;
+
+[numthreads(64,1,1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+    uint index = id.x;
+    if (index > (_BufferSize - 1))
+        return;
+    float4 positionLS = mul(_Model2Light, float4(_VextriceBuffer[index], 1.0));
+    positionLS = positionLS / positionLS.w;
+    positionLS.xyz = positionLS.xyz * 0.5 + 0.5;
+    float mapDepth = _ShadowMap.SampleLevel(_PointClamp, positionLS.xy, 0).r;
+    float shadow = (positionLS.z + 0.01f) > mapDepth;
+    _ShadowBuffer[index] = shadow;
+}

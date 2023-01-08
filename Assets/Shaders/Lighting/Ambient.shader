@@ -41,6 +41,13 @@ Shader "ShaderLearning/URP/Lighting/Ambient"
                 DECLARE_LIGHTMAP_OR_SH(lightmapUV, vertexSH, 1);
             };
 
+            half4 CalculateGradientAmbient(float3 normalWS)
+            {
+                half4 ambientColor = lerp(unity_AmbientEquator,unity_AmbientSky,saturate(normalWS.y));
+                ambientColor = lerp(ambientColor,unity_AmbientGround,saturate(-normalWS.y));
+                return ambientColor;
+            }
+
             Varyings vert(Attributes IN)
             {
                 Varyings OUT;
@@ -51,13 +58,6 @@ Shader "ShaderLearning/URP/Lighting/Ambient"
                 OUTPUT_LIGHTMAP_UV(IN.lightmapUV, unity_LightmapST, OUT.lightmapUV);
                 OUTPUT_SH(OUT.normalWS, OUT.vertexSH);
                 return OUT;
-            }
-
-            half4 CalculateGradientAmbient(float3 normalWS)
-            {
-                half4 ambientColor = lerp(unity_AmbientEquator,unity_AmbientSky,saturate(normalWS.y));
-                ambientColor = lerp(ambientColor,unity_AmbientGround,saturate(-normalWS.y));
-                return ambientColor;
             }
 
             half4 frag(Varyings IN) : SV_Target
@@ -72,8 +72,9 @@ Shader "ShaderLearning/URP/Lighting/Ambient"
                 //
                 // half4 ambientColor= CalculateGradientAmbient(normalWS);
                 // half4 ambientColor = unity_AmbientSky;
-                half3 ambientColor = SAMPLE_GI(IN.lightmapUV, IN.vertexSH, normalWS);;
-
+                half3 ambientColor = SAMPLE_GI(IN.lightmapUV, IN.vertexSH, normalWS);
+                //
+                // MixRealtimeAndBakedGI(mainLight, normalWS, inputData.bakedGI, shadowMask);
 
                 half4 totlaColor = half4(ambientColor.rgb,1);
                 return totlaColor;
