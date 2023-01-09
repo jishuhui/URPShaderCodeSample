@@ -37,7 +37,7 @@ Material:
     - _SpecularExp: 0.19
     - _SpecularExp1: 0.764
     m_Colors:
-    - _Color: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
+    - _Color: {r: 0.573, g: 0.573, b: 0.573, a: 1}
     - _DarkColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 1}
     - _SpecularColor1: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}

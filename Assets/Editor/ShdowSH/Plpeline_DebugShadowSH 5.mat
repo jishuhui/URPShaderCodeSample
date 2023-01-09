@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Plpeline_DebugShadowSH
+  m_Name: Plpeline_DebugShadowSH 5
   m_Shader: {fileID: 4800000, guid: bfd88631a5f3b55409824177e7450d04, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f557150be875de9498f0eb2ec07f25b2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9c9b7086c1baf344bac3b1dbf004db42, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _StretchedNoise:
@@ -28,18 +28,18 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _AlphaCutOff: 0.195
+    - _AlphaCutOff: 0.35
     - _AlphaCutOff1: 0.315
-    - _MainColorStrength: 0.8
+    - _MainColorStrength: 1
     - _NoiseEXP: 1
-    - _ShadowSHStrength: 0.362
+    - _ShadowSHStrength: 0.859
     - _Shift: 0
     - _Shift1: 0
     - _SpecularExp: 0.2
-    - _SpecularExp1: 0.895
+    - _SpecularExp1: 0.89
     m_Colors:
-    - _Color: {r: 0.5840349, g: 0.5840349, b: 0.643, a: 1}
-    - _DarkColor: {r: 0.064, g: 0.036352, b: 0.031744, a: 0}
-    - _SpecularColor: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 1}
+    - _Color: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
+    - _DarkColor: {r: 0.037, g: 0.0036630013, b: 0.0036630013, a: 1}
+    - _SpecularColor: {r: 0.29411766, g: 0.29411766, b: 0.29411766, a: 1}
     - _SpecularColor1: {r: 0.29411766, g: 0.29411766, b: 0.29411766, a: 1}
   m_BuildTextureStacks: []

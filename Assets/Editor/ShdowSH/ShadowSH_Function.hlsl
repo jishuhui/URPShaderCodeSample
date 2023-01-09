@@ -33,13 +33,16 @@
 
     struct Varyings
     {
-        float4 positionCS              : SV_POSITION;
-        float2 uv                      : TEXCOORD0;
-        float3 normalWS                : TEXCOORD1;
-        float3 bitangentWS             : TEXCOORD2; 
-        float3 viewWS                  : TEXCOORD3;
-        float3 positionWS              : TEXCOORD4;
-        float4 color                   : COLOR;
+        float4 positionCS               : SV_POSITION;
+        float2 uv                       : TEXCOORD0;
+        float3 normalWS                 : TEXCOORD1;
+        float3 bitangentWS              : TEXCOORD2; 
+        float3 viewWS                   : TEXCOORD3;
+        float3 positionWS               : TEXCOORD4;
+    	float4 texcoord1				: TEXCOORD5;
+    	float4 texcoord2				: TEXCOORD6;
+    	float4 texcoord3				: TEXCOORD7;
+    	float4 color                    : COLOR;
     };
 
 	inline float Dither8x8Bayer( int x, int y )
@@ -137,28 +140,6 @@
         half dirAttenuation = smoothstep(-1.0,0.0,dotTH);
         return dirAttenuation * pow(sinTH,exponent);
     }
-    
-    // G项 几何函数
-    half GeometrySchlickGGX(half NdotV, half roughness)
-    {
-        float r = (roughness + 1.0);
-        float k = (r*r) / 8.0;
-
-        float nom   = NdotV;
-        float denom = NdotV * (1.0 - k) + k;
-
-        return nom / denom;
-    }
-    // G项 几何函数 Smith’s Schlick-GGX
-    half G_GeometrySmith(half3 N, half3 V, half3 L, half roughness)
-    {
-        half NdotV = max(dot(N, V), 0.0);
-        half NdotL = max(dot(N, L), 0.0);
-        half ggx1 = GeometrySchlickGGX(NdotV, roughness);
-        half ggx2 = GeometrySchlickGGX(NdotL, roughness);
-
-        return ggx1 * ggx2;
-    }
 
     half3 LightingHair(half3 bitangentWS, half3 lightDirWS, half3 normalWS, half3 viewDirWS, float2 uv,half exp,half exp1,half3 specular,half3 specular1)
     {
@@ -169,8 +150,6 @@
         //specular
         half3 specularColor1  = StrandSpecular(t1,viewDirWS,lightDirWS,exp) * specular;
         half3 specularColor2  = StrandSpecular(t2,viewDirWS,lightDirWS,exp1) * specular1;
-        // half G = G_GeometrySmith(normalWS,viewDirWS,lightDirWS,_SpecularExp);
-        // specularColor *= G;
 
         return max(0.01,specularColor1 + specularColor2);
 
@@ -181,40 +160,61 @@
         Varyings output = (Varyings)0;
 	    VertexPositionInputs PosInput = GetVertexPositionInputs(input.positionOS);
 	    VertexNormalInputs NormalInput = GetVertexNormalInputs(input.normalOS,input.tangentOS);
-	    
-        float3 lightDirection = _MainLightPosition.xyz;
-        lightDirection = mul(unity_WorldToObject, float4(lightDirection.xyz, 0)).xyz;
-        lightDirection = normalize(lightDirection);
 
+		output.color = 0;
 	    output.positionWS = PosInput.positionWS;
 	    output.positionCS = PosInput.positionCS;
 	    output.bitangentWS = NormalInput.bitangentWS;
 	    output.normalWS = NormalInput.normalWS;
 	    output.viewWS = GetWorldSpaceViewDir(output.positionWS);
-	    output.color = (GetShadowSH4(lightDirection, input.texcoord1, input.texcoord2, input.texcoord3.x)).xxxx;
         output.uv = TRANSFORM_TEX(input.texcoord,_MainTex);
-        return output;
+		output.texcoord1 = input.texcoord1;
+		output.texcoord2 = input.texcoord2;
+		output.texcoord3 = input.texcoord3;
+		
+	    return output;
     }
 
     half4 PBRFragment(Varyings input) : SV_Target
     {
-        // input.color.r = 1.0;
-        Light light = GetMainLight();
+    	Light light = GetMainLight();
+	    half3 attenuatedLightColor = light.color * light.distanceAttenuation;
         half3 normalWS = normalize(input.normalWS);
         half3 viewWS = SafeNormalize(input.viewWS);
         half3 bitangentWS = normalize(input.bitangentWS);
+
+    	half NL = saturate(dot(light.direction,input.normalWS));
+    	float3 DiffuselightDir = normalize(mul(unity_WorldToObject, float4(light.direction, 0)).xyz);
+    	half ShadowSH = min(NL,GetShadowSH4(DiffuselightDir, input.texcoord1, input.texcoord2, input.texcoord3.x));
+    	ShadowSH = lerp(1.0,ShadowSH,_ShadowSHStrength);
+    	
+    	float4 BaseColor = lerp(1.0, SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, input.uv), _MainColorStrength) * _Color;
+    	
         half smoothness = exp2(10 * _SpecularExp + 1);
         half smoothness1 = exp2(10 * _SpecularExp1 + 1);
 
-        half3 hairColor = LightingHair(bitangentWS,light.direction,normalWS,viewWS,input.uv,smoothness,smoothness1,_SpecularColor.rgb,_SpecularColor1.rgb);
+    	half3 DiffuseColor = ShadowSH.xxx * attenuatedLightColor * BaseColor.rgb;
+    	half3 SpecularColor = ShadowSH * attenuatedLightColor *
+        	LightingHair(bitangentWS,light.direction,normalWS,viewWS,input.uv,smoothness,smoothness1,_SpecularColor.rgb,_SpecularColor1.rgb);
+    	
+    	int additionalLightCount = GetAdditionalLightsCount();//获取额外光源数量
+    	for (int i = 0; i < additionalLightCount; ++i)
+    	{
+    		light = GetAdditionalLight(i, input.positionWS);//根据index获取额外的光源数据
+    		attenuatedLightColor = light.color * light.distanceAttenuation;
+    		half NL = saturate(dot(light.direction,input.normalWS));
+    		DiffuselightDir = normalize(mul(unity_WorldToObject, float4(light.direction, 0)).xyz);
+    		ShadowSH = min(NL,GetShadowSH4(DiffuselightDir, input.texcoord1, input.texcoord2, input.texcoord3.x));
+    		ShadowSH = lerp(1.0,ShadowSH,_ShadowSHStrength);
+    		
+			DiffuseColor += ShadowSH.xxx * attenuatedLightColor * BaseColor.rgb;
+    		SpecularColor += ShadowSH.xxx * attenuatedLightColor *
+    			LightingHair(bitangentWS,light.direction,normalWS,viewWS,input.uv,smoothness,smoothness1,_SpecularColor.rgb,_SpecularColor1.rgb);
+	    }
+    	
+		half3 ambientColor = SampleSH(normalWS) * BaseColor.rgb;
+    	float4 outcolor = float4(ambientColor + DiffuseColor + SpecularColor, saturate(BaseColor.a));
         
-
-        float4 BaseColor = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, input.uv);
-        BaseColor.rgb = lerp(1.0,BaseColor.rgb,_MainColorStrength);
-        float VertexColor = lerp(1.0,input.color.r,_ShadowSHStrength);
-        hairColor *= input.color.r * _MainLightColor.rgb;
-        float4 outcolor = float4(BaseColor.rgb * lerp(_DarkColor,_Color,VertexColor) * _MainLightColor.rgb, saturate(BaseColor.a));
-        outcolor.rgb += hairColor;
         #ifdef ALPHACLIP
             half alpha = outcolor.a;
             #ifdef DITHER
@@ -225,6 +225,9 @@
                 clip(alpha - _AlphaCutOff);
             #endif
         #endif
+    	// outcolor.rgb = BaseColor;
+    	// outcolor.rgb = input.color.rgb * BaseColor * _Color.rgb;
+    	// outcolor.rgb = hairColor + ;
         
         return outcolor;
     }

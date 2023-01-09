@@ -32,13 +32,13 @@ Material:
     - _AlphaCutOff1: 0.315
     - _MainColorStrength: 1
     - _NoiseEXP: 0.4
-    - _ShadowSHStrength: 0.6
+    - _ShadowSHStrength: 0.942
     - _Shift: 0.75
     - _Shift1: 0.75
     - _SpecularExp: 0.031
     - _SpecularExp1: 0.553
     m_Colors:
-    - _Color: {r: 0.016470587, g: 0.016470587, b: 0.02, a: 1}
+    - _Color: {r: 0.10980392, g: 0.10980392, b: 0.13333334, a: 1}
     - _DarkColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 0.10880001, g: 0.11068719, b: 0.13333334, a: 1}
     - _SpecularColor1: {r: 0.23318183, g: 0.22827274, b: 0.27, a: 1}

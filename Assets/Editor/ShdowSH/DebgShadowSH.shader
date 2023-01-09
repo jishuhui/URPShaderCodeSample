@@ -2,8 +2,8 @@ Shader "Plpeline/DebugShadowSH"
 {
     Properties
     {
-        [HDR]_Color("Color",COLOR) = (1,1,1,1)
-        _DarkColor("Color",COLOR) = (0,0,0,1)
+        _Color("Color",COLOR) = (1,1,1,1)
+//        _DarkColor("Color",COLOR) = (0,0,0,1)
         _MainTex ("Texture", 2D) = "white" {}
         _AlphaCutOff ("_AlphaCutOff" , Range(0, 1)) = 0.1
 //        _AlphaCutOff1 ("_AlphaCutOff" , Range(0, 1)) = 0.9
