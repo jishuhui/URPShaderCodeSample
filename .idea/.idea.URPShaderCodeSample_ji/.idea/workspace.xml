@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3192c13-8c08-4b91-87b4-a8731b007af4" name="默认变更列表" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.URPShaderCodeSample_ji/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.URPShaderCodeSample_ji/.idea/contentModel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.URPShaderCodeSample_ji/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.URPShaderCodeSample_ji/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.URPShaderCodeSample_ji/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.URPShaderCodeSample_ji/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.URPShaderCodeSample_ji/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.URPShaderCodeSample_ji/.idea/riderModule.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.URPShaderCodeSample_ji/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ShdowSH/DebgShadowSH.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/ShdowSH/DebgShadowSH.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ShdowSH/Plpeline_DebugShadowSH 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/ShdowSH/Plpeline_DebugShadowSH 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ShdowSH/Plpeline_DebugShadowSH 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/ShdowSH/Plpeline_DebugShadowSH 2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ShdowSH/Plpeline_DebugShadowSH 3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/ShdowSH/Plpeline_DebugShadowSH 3.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ShdowSH/Plpeline_DebugShadowSH 4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/ShdowSH/Plpeline_DebugShadowSH 4.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ShdowSH/Plpeline_DebugShadowSH.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/ShdowSH/Plpeline_DebugShadowSH.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ShdowSH/Res/ShdowSH.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/ShdowSH/Res/ShdowSH.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ShdowSH/ShadowSH_Function.hlsl" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/ShdowSH/ShadowSH_Function.hlsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="d3192c13-8c08-4b91-87b4-a8731b007af4" name="默认变更列表" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +60,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1673267103000</updated>
-      <workItem from="1673267111454" duration="8699000" />
+      <workItem from="1673267111454" duration="9335000" />
     </task>
     <servers />
   </component>
