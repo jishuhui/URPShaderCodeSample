@@ -32,7 +32,7 @@ Material:
     - _AlphaCutOff1: 0.315
     - _MainColorStrength: 1
     - _NoiseEXP: 1
-    - _ShadowSHStrength: 0.6
+    - _ShadowSHStrength: 0.429
     - _Shift: 0
     - _Shift1: 0
     - _SpecularExp: 0.216

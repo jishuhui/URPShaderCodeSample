@@ -198,6 +198,7 @@
 
     half4 PBRFragment(Varyings input) : SV_Target
     {
+        // input.color.r = 1.0;
         Light light = GetMainLight();
         half3 normalWS = normalize(input.normalWS);
         half3 viewWS = SafeNormalize(input.viewWS);
