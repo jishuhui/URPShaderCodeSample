@@ -30,6 +30,7 @@ Material:
     m_Floats:
     - _AlphaCutOff: 0.1
     - _MainColorStrength: 1
+    - _NoiseEXP: 1
     - _ShadowSHStrength: 1
     - _Shift: 0
     - _Shift1: 0

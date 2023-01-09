@@ -25,7 +25,7 @@
 
         half4 _SpecularColor, _SpecularColor1;
         float4 _StretchedNoise_ST,_MainTex_ST;
-        half _SpecularExp, _Shift, _SpecularExp1, _Shift1;
+        half _SpecularExp, _Shift, _SpecularExp1, _Shift1, _NoiseEXP;
         CBUFFER_END
 
         TEXTURE2D(_MainTex);SAMPLER(sampler_MainTex);
@@ -163,7 +163,7 @@
     half3 LightingHair(half3 bitangentWS, half3 lightDirWS, half3 normalWS, half3 viewDirWS, float2 uv,half exp,half exp1,half3 specular,half3 specular1)
     {
         //shift tangents
-        half shiftTex = SAMPLE_TEXTURE2D(_StretchedNoise, sampler_StretchedNoise, uv).r - 0.5;
+        half shiftTex = (SAMPLE_TEXTURE2D(_StretchedNoise, sampler_StretchedNoise, uv).r - 0.5) * _NoiseEXP;
         half3 t1 = ShiftTangent(bitangentWS,normalWS,_Shift + shiftTex);
         half3 t2 = ShiftTangent(bitangentWS,normalWS,_Shift1 + shiftTex);
         //specular

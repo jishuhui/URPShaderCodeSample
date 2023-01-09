@@ -31,6 +31,7 @@ Material:
     - _AlphaCutOff: 0.35
     - _AlphaCutOff1: 0.315
     - _MainColorStrength: 1
+    - _NoiseEXP: 1
     - _ShadowSHStrength: 0.6
     - _Shift: 0
     - _Shift1: 0

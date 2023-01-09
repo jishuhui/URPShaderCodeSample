@@ -3,7 +3,7 @@ Shader "Plpeline/DebugShadowSH"
     Properties
     {
         [HDR]_Color("Color",COLOR) = (1,1,1,1)
-        [HDR]_DarkColor("Color",COLOR) = (0,0,0,1)
+        _DarkColor("Color",COLOR) = (0,0,0,1)
         _MainTex ("Texture", 2D) = "white" {}
         _AlphaCutOff ("_AlphaCutOff" , Range(0, 1)) = 0.1
 //        _AlphaCutOff1 ("_AlphaCutOff" , Range(0, 1)) = 0.9
@@ -18,6 +18,7 @@ Shader "Plpeline/DebugShadowSH"
         _SpecularExp1 ("Smoothness 2", Range(0,1)) = 0.5
         _Shift1("Shift 2",float) = 0
         _StretchedNoise("StretchedNoise", 2D) = "white" {}
+        _NoiseEXP ("NoiseEXP", Range(-1,1)) = 0
     }
 
     SubShader
