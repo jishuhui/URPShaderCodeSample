@@ -126,7 +126,7 @@
     }
 
     //注意是副切线不是切线，也就是切线空间 TBN 中的 B
-    half3 ShiftTangent(half3 bitangentWS,half3 normalWS,half shift)
+    half3 ShiftTangent_F(half3 bitangentWS,half3 normalWS,half shift)
     {
         half3 shiftedT = bitangentWS + shift * normalWS;
         return normalize(shiftedT);
@@ -145,8 +145,8 @@
     {
         //shift tangents
         half shiftTex = (SAMPLE_TEXTURE2D(_StretchedNoise, sampler_StretchedNoise, uv).r - 0.5) * _NoiseEXP;
-        half3 t1 = ShiftTangent(bitangentWS,normalWS,_Shift + shiftTex);
-        half3 t2 = ShiftTangent(bitangentWS,normalWS,_Shift1 + shiftTex);
+        half3 t1 = ShiftTangent_F(bitangentWS,normalWS,_Shift + shiftTex);
+        half3 t2 = ShiftTangent_F(bitangentWS,normalWS,_Shift1 + shiftTex);
         //specular
         half3 specularColor1  = StrandSpecular(t1,viewDirWS,lightDirWS,exp) * specular;
         half3 specularColor2  = StrandSpecular(t2,viewDirWS,lightDirWS,exp1) * specular1;
@@ -158,7 +158,7 @@
     Varyings PBRVertex(Attributes input)
     {
         Varyings output = (Varyings)0;
-	    VertexPositionInputs PosInput = GetVertexPositionInputs(input.positionOS);
+	    VertexPositionInputs PosInput = GetVertexPositionInputs(input.positionOS.xyz);
 	    VertexNormalInputs NormalInput = GetVertexNormalInputs(input.normalOS,input.tangentOS);
 
 		output.color = 0;

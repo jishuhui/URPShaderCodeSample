@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Editor/ShdowSH/Res/ShdowSH.unity
+    guid: 5ffafa1039892834f997fc989f360558
   m_configObjects: {}
