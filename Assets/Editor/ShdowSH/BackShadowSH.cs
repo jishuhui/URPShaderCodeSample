@@ -11,7 +11,7 @@ public class BackShadowSH : MonoBehaviour
     {
         int shadowMapResolution = 2048;
         GameObject go = Selection.activeGameObject;
-        int sampleCount = 512;
+        int sampleCount = 5120;
         MeshRenderer[] renderers = go.GetComponentsInChildren<MeshRenderer>(true);
         CommandBuffer cmd = new CommandBuffer();
         Vector3[] randomDirs = new Vector3[sampleCount];

@@ -26,6 +26,7 @@
         half4 _SpecularColor, _SpecularColor1;
         float4 _StretchedNoise_ST,_MainTex_ST;
         half _SpecularExp, _Shift, _SpecularExp1, _Shift1, _NoiseEXP;
+		int	_DbugShadowSH, _DbugSpecular;
         CBUFFER_END
 
         TEXTURE2D(_MainTex);SAMPLER(sampler_MainTex);
@@ -186,6 +187,7 @@
     	half NL = saturate(dot(light.direction,input.normalWS));
     	float3 DiffuselightDir = normalize(mul(unity_WorldToObject, float4(light.direction, 0)).xyz);
     	half ShadowSH = min(NL,GetShadowSH4(DiffuselightDir, input.texcoord1, input.texcoord2, input.texcoord3.x));
+    	half DebugShadowSH = ShadowSH;
     	ShadowSH = lerp(1.0,ShadowSH,_ShadowSHStrength);
     	
     	float4 BaseColor = lerp(1.0, SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, input.uv), _MainColorStrength) * _Color;
@@ -205,6 +207,7 @@
     		half NL = saturate(dot(light.direction,input.normalWS));
     		DiffuselightDir = normalize(mul(unity_WorldToObject, float4(light.direction, 0)).xyz);
     		ShadowSH = min(NL,GetShadowSH4(DiffuselightDir, input.texcoord1, input.texcoord2, input.texcoord3.x));
+    		DebugShadowSH += ShadowSH;
     		ShadowSH = lerp(1.0,ShadowSH,_ShadowSHStrength);
     		
 			DiffuseColor += ShadowSH.xxx * attenuatedLightColor * BaseColor.rgb;
@@ -225,6 +228,10 @@
                 clip(alpha - _AlphaCutOff);
             #endif
         #endif
+
+    	//debg
+    	outcolor.rgb = lerp(outcolor.rgb,DebugShadowSH,_DbugShadowSH);
+    	outcolor.rgb = lerp(outcolor.rgb,SpecularColor,_DbugSpecular);
     	// outcolor.rgb = BaseColor;
     	// outcolor.rgb = input.color.rgb * BaseColor * _Color.rgb;
     	// outcolor.rgb = hairColor + ;
