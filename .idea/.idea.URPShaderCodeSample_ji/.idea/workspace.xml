@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3192c13-8c08-4b91-87b4-a8731b007af4" name="默认变更列表" comment="" />
+    <list default="true" id="d3192c13-8c08-4b91-87b4-a8731b007af4" name="默认变更列表" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.URPShaderCodeSample_ji/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.URPShaderCodeSample_ji/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.URPShaderCodeSample_ji/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.URPShaderCodeSample_ji/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.URPShaderCodeSample_ji/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.URPShaderCodeSample_ji/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/ShdowSH/BackShadowSH.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/ShdowSH/BackShadowSH.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/ShdowSH/DebgShadowSH.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/ShdowSH/DebgShadowSH.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/ShdowSH/Plpeline_DebugShadowSH 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/ShdowSH/Plpeline_DebugShadowSH 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/ShdowSH/Plpeline_DebugShadowSH 7.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/ShdowSH/Plpeline_DebugShadowSH 7.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/ShdowSH/Res/ShdowSH_Hair.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/ShdowSH/Res/ShdowSH_Hair.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/ShdowSH/ShadowSH_Function.hlsl" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/ShdowSH/ShadowSH_Function.hlsl" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,10 +20,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/837AA911-4D53-41F7-B1C6-79EBA18C9BAF/16/f5d9e82e/Mesh.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Editor/ShdowSH/DebgShadowSH.shader" />
       <option value="$PROJECT_DIR$/Assets/Editor/ShdowSH/ShadowSH_Function.hlsl" />
+      <option value="$PROJECT_DIR$/Assets/Editor/ShdowSH/BackShadowSH.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2K5arikGySVHa4f927TC0tqstIJ" />
@@ -32,7 +46,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -64,6 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1673267103000</updated>
       <workItem from="1673267111454" duration="9932000" />
+      <workItem from="1673772373442" duration="5889000" />
     </task>
     <servers />
   </component>

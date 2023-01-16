@@ -4,6 +4,7 @@ Shader "Plpeline/DebugShadowSH"
     {
         [Toggle]_DbugShadowSH("debugShadowSH",float) = 0
         [Toggle]_DbugSpecular("DbugSpecular",float) = 0
+        [Toggle]_DbugVertexColor("DbugVertexColor",float) = 0
         _Color("Color",COLOR) = (1,1,1,1)
 //        _DarkColor("Color",COLOR) = (0,0,0,1)
         _MainTex ("Texture", 2D) = "white" {}

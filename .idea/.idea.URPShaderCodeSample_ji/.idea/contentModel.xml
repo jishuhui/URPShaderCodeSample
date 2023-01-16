@@ -112,8 +112,148 @@
           </e>
         </e>
       </e>
+      <e p="Autodesk.Fbx.csproj" t="IncludeRecursive" />
+      <e p="Autodesk.Fbx.Editor.csproj" t="IncludeRecursive" />
+      <e p="FbxBuildTestAssets.csproj" t="IncludeRecursive" />
+      <e p="FbxBuildTestAssets.Player.csproj" t="IncludeRecursive" />
       <e p="Library" t="Include">
         <e p="PackageCache" t="Include">
+          <e p="com.autodesk.fbx@4.2.0" t="Include">
+            <e p="Editor" t="Include">
+              <e p="Autodesk.Fbx.Editor.asmdef" t="Include" />
+              <e p="Scripts" t="Include">
+                <e p="PostProcessAddToBuild.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Runtime" t="Include">
+              <e p="Autodesk.Fbx.asmdef" t="Include" />
+              <e p="Scripts" t="Include">
+                <e p="EFbxType.cs" t="Include" />
+                <e p="FbxAMatrix.cs" t="Include" />
+                <e p="FbxAnimCurve.cs" t="Include" />
+                <e p="FbxAnimCurveBase.cs" t="Include" />
+                <e p="FbxAnimCurveDef.cs" t="Include" />
+                <e p="FbxAnimCurveFilterUnroll.cs" t="Include" />
+                <e p="FbxAnimCurveKey.cs" t="Include" />
+                <e p="FbxAnimCurveNode.cs" t="Include" />
+                <e p="FbxAnimLayer.cs" t="Include" />
+                <e p="FbxAnimStack.cs" t="Include" />
+                <e p="FbxAxisSystem.cs" t="Include" />
+                <e p="FbxBindingTable.cs" t="Include" />
+                <e p="FbxBindingTableBase.cs" t="Include" />
+                <e p="FbxBindingTableEntry.cs" t="Include" />
+                <e p="FbxBlendShape.cs" t="Include" />
+                <e p="FbxBlendShapeChannel.cs" t="Include" />
+                <e p="FbxCamera.cs" t="Include" />
+                <e p="FbxCluster.cs" t="Include" />
+                <e p="FbxCollection.cs" t="Include" />
+                <e p="FbxConnection.cs" t="Include" />
+                <e p="FbxConstraint.cs" t="Include" />
+                <e p="FbxConstraintAim.cs" t="Include" />
+                <e p="FbxConstraintParent.cs" t="Include" />
+                <e p="FbxConstraintPosition.cs" t="Include" />
+                <e p="FbxConstraintRotation.cs" t="Include" />
+                <e p="FbxConstraintScale.cs" t="Include" />
+                <e p="FbxDataType.cs" t="Include" />
+                <e p="FbxDeformer.cs" t="Include" />
+                <e p="FbxDocument.cs" t="Include" />
+                <e p="FbxDocumentInfo.cs" t="Include" />
+                <e p="FbxDouble4x4.cs" t="Include" />
+                <e p="FbxDoubleTemplates.cs" t="Include" />
+                <e p="FbxEmitter.cs" t="Include" />
+                <e p="FbxEntryView.cs" t="Include" />
+                <e p="FbxEuler.cs" t="Include" />
+                <e p="FbxExporter.cs" t="Include" />
+                <e p="FbxFileTexture.cs" t="Include" />
+                <e p="FbxGeometry.cs" t="Include" />
+                <e p="FbxGeometryBase.cs" t="Include" />
+                <e p="FbxGlobalSettings.cs" t="Include" />
+                <e p="FbxImplementation.cs" t="Include" />
+                <e p="FbxImporter.cs" t="Include" />
+                <e p="FbxIOBase.cs" t="Include" />
+                <e p="FbxIOFileHeaderInfo.cs" t="Include" />
+                <e p="FbxIOPluginRegistry.cs" t="Include" />
+                <e p="FbxIOSettings.cs" t="Include" />
+                <e p="FbxLayer.cs" t="Include" />
+                <e p="FbxLayerContainer.cs" t="Include" />
+                <e p="FbxLayerElement.cs" t="Include" />
+                <e p="FbxLayerElementArray.cs" t="Include" />
+                <e p="FbxLayerElementArrayTemplateFbxColor.cs" t="Include" />
+                <e p="FbxLayerElementArrayTemplateFbxSurfaceMaterial.cs" t="Include" />
+                <e p="FbxLayerElementArrayTemplateFbxVector2.cs" t="Include" />
+                <e p="FbxLayerElementArrayTemplateFbxVector4.cs" t="Include" />
+                <e p="FbxLayerElementArrayTemplateInt.cs" t="Include" />
+                <e p="FbxLayerElementBinormal.cs" t="Include" />
+                <e p="FbxLayerElementMaterial.cs" t="Include" />
+                <e p="FbxLayerElementNormal.cs" t="Include" />
+                <e p="FbxLayerElementTangent.cs" t="Include" />
+                <e p="FbxLayerElementTemplateFbxColor.cs" t="Include" />
+                <e p="FbxLayerElementTemplateFbxSurfaceMaterial.cs" t="Include" />
+                <e p="FbxLayerElementTemplateFbxVector2.cs" t="Include" />
+                <e p="FbxLayerElementTemplateFbxVector4.cs" t="Include" />
+                <e p="FbxLayerElementUV.cs" t="Include" />
+                <e p="FbxLayerElementVertexColor.cs" t="Include" />
+                <e p="FbxLight.cs" t="Include" />
+                <e p="FbxLimits.cs" t="Include" />
+                <e p="FbxManager.cs" t="Include" />
+                <e p="FbxMarker.cs" t="Include" />
+                <e p="FbxMatrix.cs" t="Include" />
+                <e p="FbxMesh.cs" t="Include" />
+                <e p="FbxNode.cs" t="Include" />
+                <e p="FbxNodeAttribute.cs" t="Include" />
+                <e p="FbxNull.cs" t="Include" />
+                <e p="FbxNurbsCurve.cs" t="Include" />
+                <e p="FbxObject.cs" t="Include" />
+                <e p="FbxPose.cs" t="Include" />
+                <e p="FbxProperty.cs" t="Include" />
+                <e p="FbxPropertyBool.cs" t="Include" />
+                <e p="FbxPropertyDouble.cs" t="Include" />
+                <e p="FbxPropertyDouble3.cs" t="Include" />
+                <e p="FbxPropertyEAreaLightShape.cs" t="Include" />
+                <e p="FbxPropertyEBlendMode.cs" t="Include" />
+                <e p="FbxPropertyEDecayType.cs" t="Include" />
+                <e p="FbxPropertyEGateFit.cs" t="Include" />
+                <e p="FbxPropertyEInheritType.cs" t="Include" />
+                <e p="FbxPropertyELightType.cs" t="Include" />
+                <e p="FbxPropertyEntryView.cs" t="Include" />
+                <e p="FbxPropertyEProjectionType.cs" t="Include" />
+                <e p="FbxPropertyEWrapMode.cs" t="Include" />
+                <e p="FbxPropertyFlags.cs" t="Include" />
+                <e p="FbxPropertyFloat.cs" t="Include" />
+                <e p="FbxPropertyInt.cs" t="Include" />
+                <e p="FbxPropertyMarkerELook.cs" t="Include" />
+                <e p="FbxPropertyNullELook.cs" t="Include" />
+                <e p="FbxPropertyString.cs" t="Include" />
+                <e p="FbxQuaternion.cs" t="Include" />
+                <e p="FbxScene.cs" t="Include" />
+                <e p="FbxSemanticEntryView.cs" t="Include" />
+                <e p="FbxShape.cs" t="Include" />
+                <e p="FbxSharpProgressCallback.cs" t="Include" />
+                <e p="FbxSkeleton.cs" t="Include" />
+                <e p="FbxSkin.cs" t="Include" />
+                <e p="FbxStatus.cs" t="Include" />
+                <e p="FbxSubDeformer.cs" t="Include" />
+                <e p="FbxSurfaceLambert.cs" t="Include" />
+                <e p="FbxSurfaceMaterial.cs" t="Include" />
+                <e p="FbxSurfacePhong.cs" t="Include" />
+                <e p="FbxSystemUnit.cs" t="Include" />
+                <e p="FbxTexture.cs" t="Include" />
+                <e p="FbxTime.cs" t="Include" />
+                <e p="FbxTimeSpan.cs" t="Include" />
+                <e p="FbxTransform.cs" t="Include" />
+                <e p="Globals.cs" t="Include" />
+                <e p="NativeMethods.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Tests" t="Include">
+              <e p="Runtime" t="Include">
+                <e p="BuildTestsAssets" t="Include">
+                  <e p="ExportEmptyFbx.cs" t="Include" />
+                  <e p="FbxBuildTestAssets.asmdef" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
           <e p="com.unity.collab-proxy@1.9.0" t="Include">
             <e p="Editor" t="Include">
               <e p="Collaborate" t="Include">
@@ -672,6 +812,41 @@
                 </e>
                 <e p="WorkspaceWindow.cs" t="Include" />
               </e>
+            </e>
+          </e>
+          <e p="com.unity.formats.fbx@4.2.0" t="Include">
+            <e p="Editor" t="Include">
+              <e p="CameraVisitor.cs" t="Include" />
+              <e p="ConvertToNestedPrefab.cs" t="Include" />
+              <e p="ConvertToPrefabEditorWindow.cs" t="Include" />
+              <e p="ConvertToPrefabSettings.cs" t="Include" />
+              <e p="CustomExtensions.cs" t="Include" />
+              <e p="ExportModelEditorWindow.cs" t="Include" />
+              <e p="ExportModelSettings.cs" t="Include" />
+              <e p="ExportSettings.cs" t="Include" />
+              <e p="FbxExporter.cs" t="Include" />
+              <e p="FbxExporterRepairMissingScripts.cs" t="Include" />
+              <e p="FbxExportPresetSelectorReceiver.cs" t="Include" />
+              <e p="FbxExportTimelineAction.cs" t="Include" />
+              <e p="FbxPropertyChannelPair.cs" t="Include" />
+              <e p="FbxRotationCurve.cs" t="Include" />
+              <e p="IExportData.cs" t="Include" />
+              <e p="InstallIntegration.cs" t="Include" />
+              <e p="ManualUpdateEditorWindow.cs" t="Include" />
+              <e p="Sources" t="Include">
+                <e p="Recorders" t="Include">
+                  <e p="FbxRecorder" t="Include">
+                    <e p="FbxRecorder.cs" t="Include" />
+                    <e p="FbxRecorderSettings.cs" t="Include" />
+                    <e p="FbxRecorderSettingsEditor.cs" t="Include" />
+                  </e>
+                </e>
+              </e>
+              <e p="Unity.Formats.Fbx.Editor.asmdef" t="Include" />
+            </e>
+            <e p="Runtime" t="Include">
+              <e p="FbxPrefab.cs" t="Include" />
+              <e p="Unity.Formats.Fbx.Runtime.asmdef" t="Include" />
             </e>
           </e>
           <e p="com.unity.ide.rider@2.0.7" t="Include">
@@ -2968,7 +3143,7 @@
               </e>
             </e>
           </e>
-          <e p="com.unity.timeline@1.4.8" t="Include">
+          <e p="com.unity.timeline@1.7.1" t="Include">
             <e p="Editor" t="Include">
               <e p="Actions" t="Include">
                 <e p="ActionContext.cs" t="Include" />
@@ -3060,7 +3235,9 @@
                 <e p="DirectorNamedColorInspector.cs" t="Include" />
                 <e p="EditorClip.cs" t="Include" />
                 <e p="EditorClipFactory.cs" t="Include" />
+                <e p="FrameRateDrawer.cs" t="Include" />
                 <e p="GroupTrackInspector.cs" t="Include" />
+                <e p="IInspectorChangeHandler.cs" t="Include" />
                 <e p="MarkerInspector.cs" t="Include" />
                 <e p="TimeFieldDrawer.cs" t="Include" />
                 <e p="TimelineAssetInspector.cs" t="Include" />
@@ -3077,6 +3254,9 @@
                 <e p="ITimelineItem.cs" t="Include" />
                 <e p="MarkerItem.cs" t="Include" />
               </e>
+              <e p="Localization" t="Include">
+                <e p="Localization.cs" t="Include" />
+              </e>
               <e p="Manipulators" t="Include">
                 <e p="AddDelete" t="Include">
                   <e p="AddDeleteItemModeMix.cs" t="Include" />
@@ -3089,6 +3269,7 @@
                 </e>
                 <e p="EditMode.cs" t="Include" />
                 <e p="EditModeInputHandler.cs" t="Include" />
+                <e p="HeaderSplitterManipulator.cs" t="Include" />
                 <e p="Move" t="Include">
                   <e p="IMoveItemMode.cs" t="Include" />
                   <e p="MoveItemHandler.cs" t="Include" />
@@ -3100,7 +3281,7 @@
                 <e p="Sequence" t="Include">
                   <e p="EaseClip.cs" t="Include" />
                   <e p="Jog.cs" t="Include" />
-                  <e p="MarkerHeaderContextMenu.cs" t="Include" />
+                  <e p="MarkerHeaderTrackManipulator.cs" t="Include" />
                   <e p="RectangleSelect.cs" t="Include" />
                   <e p="RectangleTool.cs" t="Include" />
                   <e p="RectangleZoom.cs" t="Include" />
@@ -3161,6 +3342,7 @@
               </e>
               <e p="State" t="Include">
                 <e p="ISequenceState.cs" t="Include" />
+                <e p="PlayRange.cs" t="Include" />
                 <e p="SequenceHierarchy.cs" t="Include" />
                 <e p="SequencePath.cs" t="Include" />
                 <e p="SequenceState.cs" t="Include" />
@@ -3251,6 +3433,8 @@
                 <e p="ControlPlayableUtility.cs" t="Include" />
                 <e p="CustomTrackDrawerAttribute.cs" t="Include" />
                 <e p="DisplayNameHelper.cs" t="Include" />
+                <e p="FileUtility.cs" t="Include" />
+                <e p="FrameRateDisplayUtility.cs" t="Include" />
                 <e p="Graphics.cs" t="Include" />
                 <e p="KeyTraverser.cs" t="Include" />
                 <e p="MarkerModifier.cs" t="Include" />
@@ -3272,6 +3456,7 @@
                 <e p="SpacePartitioner.cs" t="Include" />
                 <e p="StyleManager.cs" t="Include" />
                 <e p="StyleNormalColorOverride.cs" t="Include" />
+                <e p="TimeFormat.cs" t="Include" />
                 <e p="TimelineKeyboardNavigation.cs" t="Include" />
                 <e p="TimeReferenceUtility.cs" t="Include" />
                 <e p="TrackModifier.cs" t="Include" />
@@ -3288,8 +3473,13 @@
                   <e p="TimelineReadOnlyMode.cs" t="Include" />
                   <e p="TimeReferenceMode.cs" t="Include" />
                 </e>
+                <e p="OverlayDrawer.cs" t="Include" />
                 <e p="PlaybackScroller.cs" t="Include" />
+                <e p="SequenceContext.cs" t="Include" />
+                <e p="TimelineEditorWindow.cs" t="Include" />
                 <e p="TimelineMarkerHeaderGUI.cs" t="Include" />
+                <e p="TimelineNavigator.cs" t="Include" />
+                <e p="TimelinePlaybackControls.cs" t="Include" />
                 <e p="TimelineWindow.cs" t="Include" />
                 <e p="TimelineWindow_ActiveTimeline.cs" t="Include" />
                 <e p="TimelineWindow_Breadcrumbs.cs" t="Include" />
@@ -3298,7 +3488,9 @@
                 <e p="TimelineWindow_Gui.cs" t="Include" />
                 <e p="TimelineWindow_HeaderGui.cs" t="Include" />
                 <e p="TimelineWindow_Manipulators.cs" t="Include" />
+                <e p="TimelineWindow_Navigator.cs" t="Include" />
                 <e p="TimelineWindow_PlayableLookup.cs" t="Include" />
+                <e p="TimelineWindow_PlaybackControls.cs" t="Include" />
                 <e p="TimelineWindow_PlayRange.cs" t="Include" />
                 <e p="TimelineWindow_PreviewPlayMode.cs" t="Include" />
                 <e p="TimelineWindow_Selection.cs" t="Include" />
@@ -3306,10 +3498,12 @@
                 <e p="TimelineWindow_TimeArea.cs" t="Include" />
                 <e p="TimelineWindow_TimeCursor.cs" t="Include" />
                 <e p="TimelineWindow_TrackGui.cs" t="Include" />
+                <e p="TimelineWindowAnalytics.cs" t="Include" />
                 <e p="TimelineWindowTimeControl.cs" t="Include" />
                 <e p="ViewModel" t="Include">
                   <e p="ScriptableObjectViewPrefs.cs" t="Include" />
                   <e p="TimelineAssetViewModel.cs" t="Include" />
+                  <e p="TimelineAssetViewModel_versions.cs" t="Include" />
                   <e p="TimelineWindowViewPrefs.cs" t="Include" />
                 </e>
                 <e p="WindowConstants.cs" t="Include" />
@@ -3336,6 +3530,7 @@
                 <e p="TrackUpgrade.cs" t="Include" />
               </e>
               <e p="Attributes" t="Include">
+                <e p="TimelineHelpURLAttribute.cs" t="Include" />
                 <e p="TrackColorAttribute.cs" t="Include" />
               </e>
               <e p="Audio" t="Include">
@@ -3406,10 +3601,12 @@
                 <e p="AnimationPreviewUtilities.cs" t="Include" />
                 <e p="AnimatorBindingCache.cs" t="Include" />
                 <e p="Extrapolation.cs" t="Include" />
+                <e p="FrameRate.cs" t="Include" />
                 <e p="HashUtility.cs" t="Include" />
                 <e p="IPropertyCollector.cs" t="Include" />
                 <e p="IPropertyPreview.cs" t="Include" />
                 <e p="NotificationUtilities.cs" t="Include" />
+                <e p="TimelineClipExtensions.cs" t="Include" />
                 <e p="TimelineCreateUtilities.cs" t="Include" />
                 <e p="TimelineUndo.cs" t="Include" />
                 <e p="TimeUtility.cs" t="Include" />
@@ -3589,6 +3786,9 @@
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp\Bin" t="ExcludeRecursive" />
       <e p="Unity.CollabProxy.Editor.csproj" t="IncludeRecursive" />
+      <e p="Unity.Formats.Fbx.Editor.csproj" t="IncludeRecursive" />
+      <e p="Unity.Formats.Fbx.Runtime.csproj" t="IncludeRecursive" />
+      <e p="Unity.Formats.Fbx.Runtime.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.Mathematics.csproj" t="IncludeRecursive" />
       <e p="Unity.Mathematics.Editor.csproj" t="IncludeRecursive" />
       <e p="Unity.Mathematics.Player.csproj" t="IncludeRecursive" />

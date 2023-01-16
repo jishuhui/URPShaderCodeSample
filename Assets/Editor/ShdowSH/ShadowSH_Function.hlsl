@@ -11,6 +11,7 @@
     struct Attributes
     {
         float4 positionOS   : POSITION;
+    	float4 color		: COLOR;
         float3 normalOS     : NORMAL;
         float4 tangentOS    : TANGENT;
         float2 texcoord     : TEXCOORD0;
@@ -26,7 +27,7 @@
         half4 _SpecularColor, _SpecularColor1;
         float4 _StretchedNoise_ST,_MainTex_ST;
         half _SpecularExp, _Shift, _SpecularExp1, _Shift1, _NoiseEXP;
-		int	_DbugShadowSH, _DbugSpecular;
+		int	_DbugShadowSH, _DbugSpecular, _DbugVertexColor;
         CBUFFER_END
 
         TEXTURE2D(_MainTex);SAMPLER(sampler_MainTex);
@@ -162,7 +163,7 @@
 	    VertexPositionInputs PosInput = GetVertexPositionInputs(input.positionOS.xyz);
 	    VertexNormalInputs NormalInput = GetVertexNormalInputs(input.normalOS,input.tangentOS);
 
-		output.color = 0;
+		output.color = input.color;
 	    output.positionWS = PosInput.positionWS;
 	    output.positionCS = PosInput.positionCS;
 	    output.bitangentWS = NormalInput.bitangentWS;
@@ -187,7 +188,7 @@
     	half NL = saturate(dot(light.direction,input.normalWS));
     	float3 DiffuselightDir = normalize(mul(unity_WorldToObject, float4(light.direction, 0)).xyz);
     	half ShadowSH = min(NL,GetShadowSH4(DiffuselightDir, input.texcoord1, input.texcoord2, input.texcoord3.x));
-    	half DebugShadowSH = ShadowSH;
+    	half3 DebugShadowSH = ShadowSH.rrr;
     	ShadowSH = lerp(1.0,ShadowSH,_ShadowSHStrength);
     	
     	float4 BaseColor = lerp(1.0, SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, input.uv), _MainColorStrength) * _Color;
@@ -200,14 +201,14 @@
         	LightingHair(bitangentWS,light.direction,normalWS,viewWS,input.uv,smoothness,smoothness1,_SpecularColor.rgb,_SpecularColor1.rgb);
     	
     	int additionalLightCount = GetAdditionalLightsCount();//获取额外光源数量
-    	for (int i = 0; i < additionalLightCount; ++i)
+    	for (uint i = 0u; i < additionalLightCount; ++i)
     	{
     		light = GetAdditionalLight(i, input.positionWS);//根据index获取额外的光源数据
     		attenuatedLightColor = light.color * light.distanceAttenuation;
     		half NL = saturate(dot(light.direction,input.normalWS));
     		DiffuselightDir = normalize(mul(unity_WorldToObject, float4(light.direction, 0)).xyz);
     		ShadowSH = min(NL,GetShadowSH4(DiffuselightDir, input.texcoord1, input.texcoord2, input.texcoord3.x));
-    		DebugShadowSH += ShadowSH;
+    		DebugShadowSH += ShadowSH.rrr * attenuatedLightColor;//debug
     		ShadowSH = lerp(1.0,ShadowSH,_ShadowSHStrength);
     		
 			DiffuseColor += ShadowSH.xxx * attenuatedLightColor * BaseColor.rgb;
@@ -232,6 +233,7 @@
     	//debg
     	outcolor.rgb = lerp(outcolor.rgb,DebugShadowSH,_DbugShadowSH);
     	outcolor.rgb = lerp(outcolor.rgb,SpecularColor,_DbugSpecular);
+    	outcolor.rgb = lerp(outcolor.rgb,input.color,_DbugVertexColor);
     	// outcolor.rgb = BaseColor;
     	// outcolor.rgb = input.color.rgb * BaseColor * _Color.rgb;
     	// outcolor.rgb = hairColor + ;

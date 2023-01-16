@@ -11,7 +11,7 @@ public class BackShadowSH : MonoBehaviour
     {
         int shadowMapResolution = 2048;
         GameObject go = Selection.activeGameObject;
-        int sampleCount = 5120;
+        int sampleCount = 512;
         MeshRenderer[] renderers = go.GetComponentsInChildren<MeshRenderer>(true);
         CommandBuffer cmd = new CommandBuffer();
         Vector3[] randomDirs = new Vector3[sampleCount];
@@ -79,6 +79,7 @@ public class BackShadowSH : MonoBehaviour
                 Vector4[] shCoefficients0123 = new Vector4[bufferSize];
                 Vector4[] shCoefficients4567 = new Vector4[bufferSize];
                 Vector4[] shCoefficients9 = new Vector4[bufferSize];
+                
                 for (int z = 0; z < sampleCount; z++)
                 {
                     Vector3 dir = randomDirs[z];
@@ -87,6 +88,7 @@ public class BackShadowSH : MonoBehaviour
                     Matrix4x4 light2World = Matrix4x4.TRS(cameraPos, rotation, Vector3.one);
                     Matrix4x4 world2Light = light2World.inverse;
                     Matrix4x4 model2Light = invZProject * world2Light * renderer.localToWorldMatrix;
+                    
                     cmd.Clear();
                     cmd.SetViewport(new Rect(0f, 0f, shadowMapResolution, shadowMapResolution));
                     cmd.SetViewProjectionMatrices(world2Light, projectMatrix);
@@ -104,6 +106,7 @@ public class BackShadowSH : MonoBehaviour
                     shadowBuffer.GetData(shadowArray);
                     dir = renderer.transform.worldToLocalMatrix.MultiplyVector(dir);
                     HarmonicsBasis(dir, shBasis);
+                    
                     for (int j = 0; j < bufferSize; j++)
                     {
                         shCoefficients0123[j][0] += shadowArray[j] * shBasis[0];
@@ -131,10 +134,21 @@ public class BackShadowSH : MonoBehaviour
                     shCoefficients4567[j][3] = shCoefficients4567[j][3] * weight;
                     shCoefficients9[j][0] = shCoefficients9[j][0] * weight;
                 }
-
+                //设置球谐信息到模型
                 newMesh.SetUVs(1, shCoefficients0123);
                 newMesh.SetUVs(2, shCoefficients4567);
                 newMesh.SetUVs(3, shCoefficients9);
+                
+                //
+                Vector3[] vertices = newMesh.vertices;
+                //创建颜色数组
+                Color[] vcolors = new Color[vertices.Length];
+                for (int j = 0; j < vertices.Length; j++)
+                {
+                    vcolors[j] = Color.Lerp(Color.red, Color.green, vertices[j].y);
+                }
+
+                newMesh.colors = vcolors;
                 renderer.additionalVertexStreams = newMesh;
             }
         }

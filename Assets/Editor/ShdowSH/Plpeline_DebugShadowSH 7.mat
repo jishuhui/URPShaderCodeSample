@@ -32,6 +32,7 @@ Material:
     - _AlphaCutOff1: 0.315
     - _DbugShadowSH: 0
     - _DbugSpecular: 0
+    - _DbugVertexColor: 0
     - _MainColorStrength: 1
     - _NoiseEXP: 0.53
     - _ShadowSHStrength: 1
